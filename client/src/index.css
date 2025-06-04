@@ -1,0 +1,243 @@
+/* カレンダー空き時間検索アプリ - カスタムスタイル */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #2196F3, #21CBF3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #1976D2, #0097A7);
+}
+
+/* グローバルアニメーション */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* アプリコンテナの背景強化 */
+.app-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+}
+
+.app-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="white" stop-opacity="0.1"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
+  pointer-events: none;
+}
+
+/* カードホバー効果の強化 */
+.MuiCard-root:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+/* ボタンエフェクト */
+.MuiButton-root {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* チップエフェクト */
+.MuiChip-root {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 入力フィールドのフォーカス効果 */
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #2196F3 !important;
+  border-width: 2px !important;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1) !important;
+}
+
+/* カレンダーグリッドの美化 */
+.calendar-grid {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* タイトルテキストのエフェクト */
+.app-title {
+  background: linear-gradient(45deg, #ffffff, #f0f8ff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* エラーアラートのカスタマイズ */
+.MuiAlert-root {
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px);
+}
+
+/* 検索結果エリアの美化 */
+.search-results {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+}
+
+/* 時間スロットのアニメーション */
+.time-slot-enter {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.time-slot-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms ease-in-out;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem !important;
+  }
+  
+  .MuiContainer-root {
+    padding: 0 16px !important;
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .MuiCard-root {
+    background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%) !important;
+    color: #ffffff !important;
+  }
+}
+
+/* アクセシビリティ強化 */
+.MuiButton-root:focus-visible {
+  outline: 2px solid #2196F3 !important;
+  outline-offset: 2px !important;
+}
+
+/* ローディングアニメーション */
+.loading-spinner {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* カスタムフォント読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+/* グリッドアニメーション */
+.calendar-day-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.calendar-day-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 200ms ease-in-out;
+}
+
+/* 成功メッセージのパルス */
+.success-message {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* パフォーマンス最適化 */
+* {
+  box-sizing: border-box;
+}
+
+.MuiContainer-root {
+  will-change: transform;
+}
+
+/* 高コントラスト対応 */
+@media (prefers-contrast: high) {
+  .MuiButton-root {
+    border: 2px solid currentColor !important;
+  }
+}
+
+/* 縮小アニメーション無効化設定 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* カスタムセレクション */
+::selection {
+  background: rgba(33, 150, 243, 0.3);
+  color: #1976d2;
+}
+
+/* プリント用スタイル */
+@media print {
+  body {
+    background: white !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}

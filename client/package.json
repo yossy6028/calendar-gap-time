@@ -1,0 +1,57 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "@mui/x-date-pickers": "^8.5.0",
+    "@react-oauth/google": "^0.12.2",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "ajv": "^8.12.0",
+    "ajv-keywords": "^5.1.0",
+    "axios": "^1.9.0",
+    "date-fns": "^2.30.0",
+    "dayjs": "^1.11.13",
+    "express": "^5.1.0",
+    "open": "^10.1.2",
+    "react": "^18.2.0",
+    "react-date-range": "^2.0.1",
+    "react-dom": "^18.2.0",
+    "web-vitals": "^5.0.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "./",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.3",
+    "react-scripts": "^5.0.1"
+  }
+}

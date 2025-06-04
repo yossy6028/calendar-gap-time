@@ -1,0 +1,47 @@
+{
+  "name": "calendar-gap-time",
+  "version": "1.0.0",
+  "main": "electron-main.js",
+  "build": {
+    "appId": "com.yossy6028.calendargaptime",
+    "productName": "CalendarGapTime",
+    "files": [
+      "client/build/**/*",
+      "electron-main.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "electron": "ELECTRON_START_URL=http://localhost:3000 electron electron-main.js",
+    "electron-build": "npm run build --prefix client && electron electron-main.js",
+    "dist": "npm run build --prefix client && electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@date-io/date-fns": "^3.2.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "@mui/x-date-pickers": "^8.5.0",
+    "@mui/x-date-pickers-pro": "^8.5.0",
+    "@react-oauth/google": "^0.12.2",
+    "cors": "^2.8.5",
+    "date-fns": "^2.30.0",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.5.0",
+    "electron-oauth2": "^3.0.0",
+    "express": "^5.1.0",
+    "googleapis": "^149.0.0"
+  },
+  "devDependencies": {
+    "electron": "^36.3.1",
+    "electron-builder": "^26.0.12"
+  }
+}
